@@ -29,10 +29,15 @@ const root = ReactDOM.createRoot(
 
 // I defined a React Function Component
 // called CatCard
-function CatCard() {
+function CatCard(props) {
+  
+  // log the props object in the console, check it out
+  console.dir(props);
+
   const cardsJSX = 
   <div>
-    <h1>Hello React!</h1>
+    <h1>{ props.catObject.name }</h1>
+    <img src={ props.catObject.picture } alt="" />
   </div>;
 
   return cardsJSX;
@@ -41,12 +46,7 @@ function CatCard() {
 // I am using a React Component called
 // CatCard
 root.render(
-  // the plan is to somehow translate the elements animalsToAdopt with its object
-  // array elements with another array like the one below that contains
-  // the corresponding cat card React Components
-  [
-    <CatCard />,
-    <CatCard />,
-    <CatCard />,
-  ]
+
+  <CatCard catObject={ animalsToAdopt[0] } />
+
 );
