@@ -49,6 +49,10 @@ function CatCard(props) {
 // it is the constructor function for an object called CatCard, which has props as an argument.
 // Shouldn't we just pass the object as props in the first place? Shouldn't it be props.name instead of props.catObject.name?
 
+// console.log(props) returns us a nested object!
+// catObject is its first property. and it contains the animal object as its value!
+// This explains why we have props.catObject.name instead of props.name!
+
   return cardsJSX;
 }
 
